@@ -11,7 +11,7 @@ A **DDoS(Distributed Denial of Service)** attack happens when many machines send
 
 1. **HTTP Flood**: Massive GET/POST requests
 2. **SYN Flood**: Tons of half-open TCP connections
-3. **UDP Flood**UDP Flood: High-volume UDP packets
+3. **UDP Flood**: High-volume UDP packets
 4. **Slowloris**: Very slow HTTP headers → hold connections
 
 ### How to simulate a DDos attack: HTTP Flood
