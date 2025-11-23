@@ -16,6 +16,8 @@ A **DDoS(Distributed Denial of Service)** attack happens when many machines send
 
 ### How to simulate a DDos attack: HTTP Flood
 
+Now I will simulate a DDoS attack using the [wrk](https://github.com/wg/wrk) tool.
+
 ```bash
 brew install wrk
 
@@ -25,7 +27,8 @@ pnpm install # Install dependencies
 
 pnpm run dev # Run the project
 
-wrk -t12 -c400 -d30s http://localhost:3000/api/ddos/stats # Simulate an HTTP Flood attack
+wrk -t12 -c400 -d30s http://localhost:3000/api/ddos/stats # This will launch 12 threads, 400 connections, and run for 30 seconds
+
 ```
 
 ![wrk-http-flood](./screenshots/wrk-http-flood.png)
@@ -33,3 +36,6 @@ wrk -t12 -c400 -d30s http://localhost:3000/api/ddos/stats # Simulate an HTTP Flo
 #### How to protect against an HTTP Flood attack?
 
 1. **Rate Limiting**: Limit the number of requests per second per IP address. [See this](./server/src/middleware/ddosProtection.ts)
+
+![ddos-prevention](./screenshots/ddos-prevention-1.png)
+![ddos-prevention](./screenshots/ddos-prevention-2.png)
